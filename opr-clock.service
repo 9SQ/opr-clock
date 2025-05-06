@@ -1,0 +1,15 @@
+[Unit]
+Description=opr-clock
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python3 /home/pi/opr-clock/main.py
+WorkingDirectory=/home/pi/opr-clock
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+User=pi
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target
